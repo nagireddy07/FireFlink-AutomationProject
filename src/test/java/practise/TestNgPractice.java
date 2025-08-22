@@ -46,4 +46,12 @@ public class TestNgPractice extends FileUtility {
 //		System.out.println("Data provider");
 //		return readMultipleDataFromExcel(4, 2, "E2E");
 //	}	
+	
+	@Test
+	public void sample() {
+		
+		
+		
+		System.out.println("Just for a sample push to git hub");
+	}
 }
