@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="ninzaCRM.genericUtilities.ListenerImplementation"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="SmokeSuite"/>
+        <include name="RegressionSuite"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="practise.CreateProductTest">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="loginNinzaCRM"/>
+          <include name="LaunchBrowser"/>
+          <include name="logoutNinzaCRM"/>
+          <include name="openDB"/>
+          <include name="closeDB"/>
+          <include name="product"/>
+        </methods>
+      </class> <!-- practise.CreateProductTest -->
+      <class name="practise.CreateContactTest">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="contact"/>
+          <include name="loginNinzaCRM"/>
+          <include name="LaunchBrowser"/>
+          <include name="logoutNinzaCRM"/>
+          <include name="openDB"/>
+          <include name="closeDB"/>
+        </methods>
+      </class> <!-- practise.CreateContactTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
