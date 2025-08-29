@@ -24,12 +24,12 @@ public class TestNgPractice extends FileUtility {
 //		System.out.println("Delete");
 //	}
 	
-	@Test(dataProvider = "getData")
-	public void practiseDataProvider(String name,String id) {
-		System.out.println("something");
-		System.out.println(id + " "+name);
-	}
-	
+//	@Test(dataProvider = "getData")
+//	public void practiseDataProvider(String name,String id) {
+//		System.out.println("something");
+//		System.out.println(id + " "+name);
+//	}
+//	
 //	@DataProvider
 //	public Object[][] getData() throws EncryptedDocumentException, IOException{
 //		//4 rows , 2 cols - 4 sets of data with 2 attributes.
