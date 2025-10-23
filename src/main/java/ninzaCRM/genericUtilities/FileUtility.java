@@ -66,21 +66,26 @@ public class FileUtility {
 		return list;
 	}
 	
-	public Object[][] readMultipleDataFromExcel(int rows,int cols,String sheet) throws EncryptedDocumentException, IOException{
-		FileInputStream fis = new FileInputStream(".\\src\\test\\resources\\TestData.xlsx");
-		Sheet s = WorkbookFactory.create(fis).getSheet(sheet);
-		Object[][] data = new Object[rows][cols];
-		for(int i=0;i<rows;i++) {
-			for(int j=0;i<cols;j++) {
-				try {
-					System.out.println("-----");
-				data[i][j]=s.getRow(i).getCell(j).toString();
-				}catch (Exception e) {
-					System.out.println("+++++++++++++++++++++");
-				}
-			}
-		}
-		return data;
+	public static Object[][] getMultipleDataFromExcel(String sheetName) throws IOException {
+	    FileInputStream fis = new FileInputStream(".\\src\\test\\resources\\TestData.xlsx");
+	    Sheet sheet = WorkbookFactory.create(fis).getSheet(sheetName);
+
+	    int lastRow = sheet.getLastRowNum();               // e.g., 10 means 11 rows (0–10)
+	    int lastCol = sheet.getRow(0).getLastCellNum();    // total number of columns
+
+	    Object[][] details = new Object[lastRow][lastCol]; // skipping header
+
+	    for (int i = 1; i <= lastRow; i++) {  // start from row 1 (skip header)
+	        Row row = sheet.getRow(i);
+	        for (int j = 0; j < lastCol; j++) {
+	            if (row == null || row.getCell(j) == null)
+	                details[i - 1][j] = "";
+	            else
+	                details[i - 1][j] = row.getCell(j).toString();
+	        }
+	    }
+	    fis.close();
+	    return details;
 	}
 	
 }
