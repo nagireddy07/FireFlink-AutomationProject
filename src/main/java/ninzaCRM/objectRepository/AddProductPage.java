@@ -7,12 +7,14 @@ import org.openqa.selenium.support.PageFactory;
 import ninzaCRM.genericUtilities.WebDriverUtility;
 
 public class AddProductPage extends WebDriverUtility {
+	
 	@FindBy(name = "quantity") private WebElement quantityInput;
 	@FindBy(name = "productName") private WebElement productNameInput;
 	@FindBy(name = "price") private WebElement priceInput;
 	@FindBy(name = "productCategory") private WebElement productCategorySelect;
 	@FindBy(name = "vendorId") private WebElement vendorIdSelect;
 	@FindBy(xpath = "//button[.='Add']") private WebElement addProductBtn;
+	
 	public WebElement getAddProductBtn() {
 		return addProductBtn;
 	}
